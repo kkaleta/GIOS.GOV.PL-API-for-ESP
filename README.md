@@ -15,3 +15,5 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 This library provide access to specific air parameters, especially air pollution PM (PM - Particulate Matters), from gios.gov.pl
+
+<img src="http://theveel.com/wp-content/uploads/2018/02/page5.jpg" alt="Example">
