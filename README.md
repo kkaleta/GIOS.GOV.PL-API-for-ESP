@@ -1,6 +1,6 @@
 The MIT License (MIT)
 Copyright (c) 2018 Kamil Kaleta. All right reserved.
-http://theveel.com
+http://theveel.com/?p=482
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -14,15 +14,4 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-This library provide access to specific air parameters, especially air pollution PM (PM - Particulate Matters).
-API documentation https://developer.airly.eu/docs
-
-Airly is 'Airly sp. z o.o.' trademark. 
-More About Airly https://airly.eu/en/company/
-
-Airly API KEY is required.
-Get free API key here https://developer.airly.eu/
-
-API Rate Limiting
-On a free plan, API consumer is required to use API only in non-commercial uses.
-API is limited to 1000 requests per day and 50 requests per minute.
+This library provide access to specific air parameters, especially air pollution PM (PM - Particulate Matters), from gios.gov.pl
