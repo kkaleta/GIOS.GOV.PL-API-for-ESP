@@ -1,7 +1,6 @@
 /*The MIT License (MIT)
-The MIT License (MIT)
 Copyright (c) 2018 Kamil Kaleta. All right reserved.
-http://theveel.com
+http://theveel.com/?p=482&preview=true
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -63,10 +62,8 @@ void AirPollution::getData(int sensorId){
 	isSensors=false;
 	Serial.print(">>sensorID:");
 	Serial.println(sensorId);
-	doUpdate("/pjp-api/rest/data/getData/" + (String)sensorId);
-	
+	doUpdate("/pjp-api/rest/data/getData/" + (String)sensorId);	
 }
-
 
 void AirPollution::doUpdate(String url) {
   JsonStreamingParser parser;
@@ -82,7 +79,7 @@ void AirPollution::doUpdate(String url) {
 	  if(i>10)
 		  ESP.restart();
 		  // return;
-	  Serial.println("??????????? no api.gios.gov.pl");
+	  Serial.println("!!! no api gios.gov.pl");
 	  
   }
   delay(1);
@@ -120,15 +117,11 @@ if(showOutput){
       if (isBody) {
         parser.parse(c);
       }
-	  // if(p==1)
 		  delay(1);
     }
 	delay(1);
 	  }
   delay(1);
-  // Serial.println("************************************parser will reset");
-  // parser.reset();
-  // yield();
 }
 
 void AirPollution::whitespace(char c) {}
@@ -139,10 +132,10 @@ void AirPollution::key(String key) {
 	  currentKey = String(key);
 //#######################################  
 if(showOutput){
-    // Serial.print("currentParent: ");
-	// Serial.print(currentParent);	
-	// Serial.print(" currentKey: ");
-	// Serial.println(currentKey);
+     	Serial.print("currentParent: ");
+ 	Serial.print(currentParent);	
+	Serial.print(" currentKey: ");
+	Serial.println(currentKey);
 }
 //######################################
 }
@@ -151,8 +144,8 @@ void AirPollution::value(String value) {
 	
 //#########################################	
 if(showOutput){
-	// Serial.print("currentValue! ");
-	// Serial.println(value);
+	Serial.print("currentValue! ");
+	Serial.println(value);
 }
 //########################################	
 
@@ -186,13 +179,7 @@ if(showOutput){
 	}
 //.AQI
 if(isData){
-				// Serial.print("[isData] PARENT ");
-				// Serial.print(currentParent);
-				// Serial.print(", KEY: ");
-				// Serial.print(currentKey);
-				// Serial.print(", VALUE: ");
-				// Serial.println(value);
-			//SINGLE MEASURMENT
+		//SINGLE MEASURMENT
 		if (currentKey =="value" && value !="null" && measureNotFound){// && measureNotFound && notProperMeasureCnt<6){
 				if(showOutput){
 						Serial.print("####measure: ");
@@ -202,7 +189,7 @@ if(isData){
 				measureNotFound=false;
 				notProperMeasureCnt=-1;
 		}
-			//.SINGLE MEASURMENT	
+		//.SINGLE MEASURMENT	
 	}
 }
 
