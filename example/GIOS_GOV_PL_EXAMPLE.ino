@@ -5,7 +5,7 @@ http://theveel.com/?p=482
 */
 
 #include <ESP8266WiFi.h>          //https://github.com/esp8266/Arduino
-#include "AirPollution.h"
+#include "AirPollution.h"        //https://github.com/kkaleta/GIOS.GOV.PL-API-for-ESP/
 AirPollution pollution;
 
 
@@ -60,7 +60,7 @@ void updatePollution() {
       Serial.print("|"+(String)pm2Value+"µg\t|");
       ///////////////pm2 percent
       Serial.print(toPercent(pm2Value, 25)+"\t|");
-    }else Serial.print("|\t|\t|");
+    }else Serial.print("|none\t|none\t|");
 
     /////////////PM10
     s = pollution.getStationSensorsIds(1).toInt(); //(int station, int sensorIndex)
@@ -70,7 +70,7 @@ void updatePollution() {
       Serial.print((String)pm10Value+"µg\t|");
       Serial.print(toPercent(pm10Value, 50)+"\t|");
       //
-    }else Serial.print("|\t|\t|");
+    }else Serial.print("|none\t|none\t|");
 Serial.print(stationName(stations[j]));
 Serial.println("");
   }//.for 'stations'
